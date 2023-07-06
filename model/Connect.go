@@ -11,7 +11,7 @@ import (
 var DB *gorm.DB
 
 func ConnectDatabase() {
-	dsn := "dbceria:dbceriasakti@tcp(db4free.net:3306)/dbceria?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "vinmyid_dbceria:dbceriasakti@tcp(iix101.idcloudhost.com:3306)/vinmyid_dbceria?charset=utf8mb4&parseTime=True&loc=Local"
 	conn, err := gorm.Open(mysql.Open(dsn), &gorm.Config{NamingStrategy: schema.NamingStrategy{
 		SingularTable: true,
 	}})
