@@ -11,14 +11,13 @@ import (
 var DB *gorm.DB
  
 func ConnectDatabase() {
-	dsn := "aprh8956_dbceria:dbceriangentot@tcp(103.247.8.36:3306)/aprh8956_dbceria?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{NamingStrategy: schema.NamingStrategy{
+	dsn := "makalu.iixcp.rumahweb.net user=aprh8956_dbceria password=dbceriasakti dbname=aprh8956_dbceria port=3306 sslmode=verify-full TimeZone=Asia/Shanghai"
+	conn, err := gorm.Open(postgres.Open(dsn), &gorm.Config{NamingStrategy: schema.NamingStrategy{
 		SingularTable: true,
 	}})
 	if err != nil {
-		fmt.Printf("Error: %v", err)
+		fmt.Printf("Error")
 		return
 	}
-	DB = db
+	db = conn
 }
- 
